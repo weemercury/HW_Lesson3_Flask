@@ -18,7 +18,7 @@ urls = ['https://www.google.ru/',
 def download(url):
     response = requests.get(url)
     filename = f"threading_{url.replace('/', '').replace(':', '').replace('.', '')}.html"
-    with open(f"threading_files/{filename}", 'w', encoding='utf-8') as file:
+    with open(filename, 'w', encoding='utf-8') as file:
         file.write(response.text)
     print(f"{time.time() - start_time}")
 
@@ -42,7 +42,7 @@ for thread in threads:
 def download(url):
     response = requests.get(url)
     filename = f"multiproc_{url.replace('/', '').replace(':', '').replace('.', '')}.html"
-    with open(f"multiproc_files/{filename}", 'w', encoding='utf-8') as file:
+    with open(filename, 'w', encoding='utf-8') as file:
         file.write(response.text)
 
 
