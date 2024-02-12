@@ -63,7 +63,7 @@ async def download(url):
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
             text = await response.text()
-            filename = 'a-sync_' + url.replace('https://unsplash.com/photos/', '').replace('-', '_') + '.html'
+            filename = 'a-sync_' + url.replace('https://unsplash.com/photos/', '').replace('-', '_') + '.jpg'
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(text)
      
